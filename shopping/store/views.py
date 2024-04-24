@@ -20,10 +20,11 @@ def product_info(request,product_slug):
     context = {'product':product}
     return render(request, 'store/product-info.html', context)
 
-def list_category(request, category_slug = None):
-    category = get_object_or_404(Product, slug=category_slug)
+def list_category(request, category_slug=None):
+
+    category = get_object_or_404(Category, slug=category_slug)
     products = Product.objects.filter(category=category)
-    return render(request, 'store/list-category.html', {'category':category, 'products':products} )
+    return render(request, 'store/list-category.html', {'category': category, 'products': products})
 
 
 
