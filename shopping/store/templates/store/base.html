@@ -8,7 +8,7 @@
         <meta charset="utf-8"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="icon" type="image/x-icon" href="{% static 'media/images/favicon1.ico' %}">
 
 	  <title> BARLAS MUSIC </title>
 
@@ -19,6 +19,8 @@
         <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 
 
@@ -48,8 +50,8 @@
 
 
         <a class="navbar-brand main-heading text-white" href="{% url 'store' %}"> 
-                
-        &nbsp; &nbsp; BARLAS MUSIC
+              <img src="{% static 'media/images/logo.png' %}" alt="Logo">
+        &nbsp; &nbsp;
         
         </a>
 
@@ -107,20 +109,40 @@
         <div class="collapse navbar-collapse text-center" id="navbarNavDropdown">
             
             <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
 
 
-                <li class="nav-item">
-            
-                    <a class="btn btn-alert navbar-btn text-white" type="button"  href="/"> Register </a>
+                    <li class="nav-item">
 
-                </li>
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'dashboard' %}"> Dashboard </a>
+
+                    </li>
+                    {% else %}
 
 
-                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'register' %}"> Register</a>
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'my-login' %}"> Login </a>
 
-                    <a class="btn btn-alert navbar-btn text-white" type="button"  href="/"> Login </a>
+                    </li>
+                    {% endif %}
 
-                </li>
+                {% if user.is_authenticated %}
+
+
+                    <li class="nav-item">
+
+                        <a class="btn btn-alert navbar-btn text-white" type="button"  href="{% url 'logout' %}"> Logout</a>
+
+                    </li>
+
+
+                    </li>
+                    {%endif%}
+
+                    <br>
+
+                <input type="text" placeholder="Search..">
 
 
                 &nbsp; &nbsp; &nbsp;
@@ -166,6 +188,12 @@
 
     </nav>
 
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <h6 id="message-timer" class="alert alert-success text-center"> {{message}} </h6>
+        {% endif %}
+
+    {% endfor %}
 
     <body>
 
