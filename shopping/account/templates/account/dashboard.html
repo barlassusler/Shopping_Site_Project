@@ -1,0 +1,63 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+
+    body{
+        background-color: gray;
+        }
+
+    </style>
+
+    <body>
+        <br>
+        <div class="container bg-white shadow-md p-5">
+            <h3> Welcome, {{user}}</h3>
+            <hr>
+            <p> This is the dashboard where you can perform any of the following: </p>
+            <li> Track your orders </li>
+            <li> Manage your account </li>
+
+
+
+
+        </div>
+        <br>
+        <div class="container bg-white shadow-md p-5">
+            <h4> Track your orders </h4>
+            <hr>
+            <a class="btn btn-alert navbar-btn text-black" type="button"  href="{% url 'track-orders' %}"> My Orders</a>
+        </div>
+    <br>
+
+
+
+        </div>
+        <br>
+        <div class="container bg-white shadow-md p-5">
+            <h4> Manage your account </h4>
+            <hr>
+
+            <a class="btn btn-alert navbar-btn text-black" type="button"  href="{% url 'dashboard' %}"> Profile management</a>
+
+
+        </div>
+        <br>
+
+
+    <div class="container bg-white shadow-md p-5">
+            <h4> Manage Shipping </h4>
+            <hr>
+            <p> Enter in a shipping address </p>
+            <a class="btn btn-alert navbar-btn text-black" type="button"  href="{% url 'manage-shipping' %}"> Shipping Management</a>
+
+
+        </div>
+        <br>
+    </body>
+
+{% endblock %}
