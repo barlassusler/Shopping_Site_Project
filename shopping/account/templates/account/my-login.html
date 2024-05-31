@@ -4,18 +4,54 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <style>
+<style>
     body {
-        background-color: gray;
+        background-color: #f0f2f5;
+        font-family: 'Roboto', sans-serif;
     }
-    </style>
+
+    .login-container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+    }
+
+    .login-container h3 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .login-container .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .login-container .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .login-container .form-control {
+        border-radius: 5px;
+    }
+
+    .login-container .text-center a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .login-container .text-center a:hover {
+        text-decoration: underline;
+    }
+</style>
 
 <br>
-<div class="container bg-white shadow-md p-5">
+<div class="login-container">
     <h3>Login to Your Account</h3>
-
-    <br>
-    <br>
 
     <form method="POST" autocomplete="off">
         {% csrf_token %}

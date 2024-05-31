@@ -1,129 +1,110 @@
-/* Genel stil ayarları */
+
+.form-layout{
+    bordeer-radius: 20px;
+    width: 500px;
+}
+
+
+.navbar ul li {
+    margin-right: 30px; /* Öğeler arasındaki yatay boşluk */
+}
+/* styles.css */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
-    margin: 0;
-    padding: 0;
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-    background-color: #343a40 !important;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 10px 20px;
 }
 
-.navbar .navbar-brand img {
-    max-height: 40px;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
 }
 
-.navbar .navbar-toggler-icon {
-    color: #ffffff;
-}
-
-.navbar-nav .nav-item .nav-link {
-    color: #ffffff !important;
-}
-
-.navbar-nav .nav-item .nav-link:hover {
-    color: #adb5bd !important;
-}
-
-.navbar-nav .nav-item .btn-alert {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-}
-
-.navbar-nav .nav-item .btn-alert:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-}
-
-.navbar-nav .nav-item .btn-outline-secondary {
-    color: white;
-    border-color: white;
-}
-
-.navbar-nav .nav-item .btn-outline-secondary:hover {
-    background-color: #adb5bd;
-    border-color: #adb5bd;
-}
-
-.navbar-nav .nav-item .fa-shopping-cart {
-    color: white;
-}
-
-#message-timer {
-    margin: 0;
-    padding: 0.5rem;
+.navbar-nav .nav-link {
+    color: #333;
     font-size: 1rem;
-    animation: fadeOut 5s forwards;
+    margin-left: 15px;
 }
 
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; display: none; }
+.navbar-nav .nav-link:hover {
+    color: #007bff;
 }
 
-/* Arama kutusu */
-input[type="text"] {
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
+.navbar-toggler {
+    border-color: rgba(0,0,0,.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar .dropdown-menu {
+    border-radius: 0.5rem;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #black;
+}
+
+.navbar .form-control {
     border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: 1px solid #e3e3e3;
 }
 
-input[type="text"]:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+.navbar .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
 }
 
-/* Dropdown menü */
-.dropdown-menu {
-    background-color: #343a40;
-    border-color: #343a40;
+.navbar .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
-.dropdown-menu .dropdown-item {
-    color: white;
+.navbar .btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
 }
 
-.dropdown-menu .dropdown-item:hover {
-    background-color: #495057;
-    color: white;
+.navbar .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
 }
 
-/* Başarılı mesaj */
-.alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+.navbar .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
 }
 
-.alert-success h6 {
-    margin: 0;
+.navbar .btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
 }
 
-/* Footer */
-footer {
-    background-color: #343a40;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+.navbar .badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    padding: 0.25em 0.4em;
 }
 
-footer a {
-    color: white;
+.navbar .fa-shopping-cart {
+    position: relative;
 }
 
-footer a:hover {
-    color: #adb5bd;
-}s
-
-
+.navbar .fa-shopping-cart .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
